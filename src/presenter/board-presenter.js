@@ -7,7 +7,7 @@ import WaypointView from '../view/waypoint-view.js';
 const POINT_COUNT = 3;
 
 export default class BoardPresenter {
-  waypontListContainer = new EventListView();
+  waypointListContainer = new EventListView();
 
 
   constructor({boardContainer}) {
@@ -15,11 +15,11 @@ export default class BoardPresenter {
   }
 
   init() {
-    render(this.waypontListContainer, this.boardContainer);
-    render(new AddNewPointView(), this.waypontListContainer.getElement());
+    render(this.waypointListContainer, this.boardContainer);
+    render(new AddNewPointView(), this.waypointListContainer.getElement());
 
     for (let i = 0; i < POINT_COUNT; i++) {
-      render(new WaypointView(), this.waypontListContainer.getElement());
+      render(new WaypointView(), this.waypointListContainer.getElement());
     }
   }
 }
