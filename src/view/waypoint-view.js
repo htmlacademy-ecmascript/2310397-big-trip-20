@@ -1,17 +1,10 @@
 import { createElement } from '../render.js';
 
-// function createTaskTemplate(task) {
-//   const {color, description, dueDate} = task;
-// type: 'Taxi',
-//     city: 'Geneva',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet varius magna, non porta ligula feugiat eget.',
-//     photo: '../img/icons/taxi.png',
-//     startTime: '00:23',
-//     endTime : '00:40'
-
 
 const createWaypointTemplate = (waypoint) => {
-  const {type, city, photo, startTime, endTime, priceValue} = waypoint;
+  const {type, city, photo, startTime, endTime, price, isFavorite} = waypoint;
+
+  const favoriteClassName = isFavorite ? 'event__favorite-btn--active' : '';
 
   return (`<li class="trip-events__item">
       <div class="event">
@@ -29,7 +22,7 @@ const createWaypointTemplate = (waypoint) => {
           <p class="event__duration"></p>
         </div>
         <p class="event__price">
-          &euro;&nbsp;<span class="event__price-value">${priceValue}</span>
+          &euro;&nbsp;<span class="event__price-value">${price}</span>
         </p>
         <h4 class="visually-hidden">Offers:</h4>
         <ul class="event__selected-offers">
@@ -44,7 +37,7 @@ const createWaypointTemplate = (waypoint) => {
             <span class="event__offer-price">80</span>
           </li>
         </ul>
-        <button class="event__favorite-btn" type="button">
+        <button class="event__favorite-btn ${favoriteClassName}" type="button">
           <span class="visually-hidden">Add to favorite</span>
           <svg class="event__favorite-icon" width="28" height="28" viewBox="0 0 28 28">
             <path d="M14 21l-8.22899 4.3262 1.57159-9.1631L.685209 9.67376 9.8855 8.33688 14 0l4.1145 8.33688 9.2003 1.33688-6.6574 6.48934 1.5716 9.1631L14 21z"/>
