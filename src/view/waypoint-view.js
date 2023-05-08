@@ -2,7 +2,7 @@ import { createElement } from '../render.js';
 
 
 const createWaypointTemplate = (waypoint) => {
-  const {type, city, photo, startTime, endTime, price, isFavorite} = waypoint;
+  const {type, destination, photo, startTime, endTime, price, isFavorite, offers} = waypoint;
 
   const favoriteClassName = isFavorite ? 'event__favorite-btn--active' : '';
 
@@ -12,7 +12,7 @@ const createWaypointTemplate = (waypoint) => {
         <div class="event__type">
           <img class="event__type-icon" width="42" height="42" src=${photo} alt="Event type icon">
         </div>
-        <h3 class="event__title">${type} ${city} </h3>
+        <h3 class="event__title">${type} ${destination.city} </h3>
         <div class="event__schedule">
           <p class="event__time">
             <time class="event__start-time" datetime="2019-03-18T12:25">${startTime}</time>
@@ -27,14 +27,14 @@ const createWaypointTemplate = (waypoint) => {
         <h4 class="visually-hidden">Offers:</h4>
         <ul class="event__selected-offers">
           <li class="event__offer">
-            <span class="event__offer-title">Add luggage</span>
+            <span class="event__offer-title">${offers[0].name}</span>
             &plus;&euro;&nbsp;
-            <span class="event__offer-price">50</span>
+            <span class="event__offer-price">${offers[0].price}</span>
           </li>
           <li class="event__offer">
-            <span class="event__offer-title">Switch to comfort</span>
+            <span class="event__offer-title">${offers[1].name}</span>
             &plus;&euro;&nbsp;
-            <span class="event__offer-price">80</span>
+            <span class="event__offer-price">${offers[1].price}</span>
           </li>
         </ul>
         <button class="event__favorite-btn ${favoriteClassName}" type="button">

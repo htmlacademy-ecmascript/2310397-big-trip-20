@@ -11,6 +11,8 @@ const mockWaypoints = [
     endTime: '00:40',
     price: '100',
     isFavorite: true,
+    offers: mockOffers[0].offers,
+    destination: getRandomArrayElement(mockDestination)
   },
   {
     type: 'Bus',
@@ -18,7 +20,9 @@ const mockWaypoints = [
     startTime: '01:25',
     endTime : '02:25',
     price: '50',
-    isFavorite: false
+    isFavorite: false,
+    offers: mockOffers[1].offers,
+    destination: getRandomArrayElement(mockDestination)
   },
   {
     type: 'Check-in',
@@ -26,13 +30,13 @@ const mockWaypoints = [
     startTime: '03:20',
     endTime : '03:45',
     price: '400',
-    isFavorite: true
+    isFavorite: true,
+    offers: mockOffers[2].offers,
+    destination: getRandomArrayElement(mockDestination)
   },
 ];
 
 
-function getRandomWaypoint() {
-  return getRandomArrayElement(mockWaypoints);
-}
+const getRandomWaypoint = () => getRandomArrayElement(mockWaypoints);
 
 export {getRandomWaypoint};

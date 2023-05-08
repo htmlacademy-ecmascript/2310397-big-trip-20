@@ -1,9 +1,6 @@
-
-
 const mockOffers = [
   {
     type: 'taxi',
-    id: '1',
     offers: [
       {
         name: 'Open your door',
@@ -21,7 +18,6 @@ const mockOffers = [
   },
   {
     type: 'bus',
-    id: '2',
     offers: [
       {
         name: 'Bus with wifi internet',
@@ -39,7 +35,6 @@ const mockOffers = [
   },
   {
     type: 'check-in',
-    id: '2',
     offers: [
       {
         name: 'Add breakfast',
