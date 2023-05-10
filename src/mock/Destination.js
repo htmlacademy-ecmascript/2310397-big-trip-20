@@ -1,22 +1,28 @@
 import {getRandomArrayElement} from '../utils';
 import {CITIES, DESCRIPTIONS} from '../const';
 
+const destinationPhotos = [
+  `https://loremflickr.com/248/152?random=${crypto.randomUUID()}`,
+  `https://loremflickr.com/248/152?random=${crypto.randomUUID()}`,
+  `https://loremflickr.com/248/152?random=${crypto.randomUUID()}`,
+  `https://loremflickr.com/248/152?random=${crypto.randomUUID()}`
+];
 
 const mockDestination = [
   {
     city: getRandomArrayElement(CITIES),
     description: getRandomArrayElement(DESCRIPTIONS),
-    photo: '../img/photos/1.jpg',
+    photo: destinationPhotos
   },
   {
     city: getRandomArrayElement(CITIES),
     description: getRandomArrayElement(DESCRIPTIONS),
-    photo: '../img/photos/3.jpg',
+    photo: destinationPhotos
   },
   {
     city: getRandomArrayElement(CITIES),
     description: getRandomArrayElement(DESCRIPTIONS),
-    photo: '../img/photos/4.jpg',
+    photo: destinationPhotos
   },
 ];
 

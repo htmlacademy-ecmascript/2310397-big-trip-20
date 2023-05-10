@@ -8,15 +8,14 @@ export default class BoardPresenter {
   waypointListContainer = new EventListView();
 
 
-  constructor({boardContainer, waypointModel, addNewPointModel}) {
+  constructor({boardContainer, waypointModel}) {
     this.boardContainer = boardContainer;
     this.waypointModel = waypointModel;
-    this.addNewPointModel = addNewPointModel;
   }
 
   init() {
     this.boardWaypoints = [...this.waypointModel.getWaypoints()];
-    this.boardNewPoint = this.addNewPointModel.getNewPoint();
+    this.boardNewPoint = this.waypointModel.getNewPoint();
 
     render(this.waypointListContainer, this.boardContainer);
     render(new AddNewPointView({newPoint: this.boardNewPoint}), this.waypointListContainer.getElement());

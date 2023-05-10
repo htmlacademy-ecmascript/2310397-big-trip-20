@@ -25,6 +25,14 @@ const createNewPointTemplate = (newPoint) => {
     return offersTemplate;
   };
 
+  const getPhotoTemplate = (destinationPhoto) => {
+    let photoMarkup = '';
+    for (let i = 0; i < destinationPhoto.length; i++) {
+      const photoTemplate = `<img class="event__photo" src=${destinationPhoto[i]} alt="Event photo">`;
+      photoMarkup += photoTemplate;
+    }
+    return photoMarkup;
+  };
 
   return (`<li class="trip-events__item">
     <form class="event event--edit" action="#" method="post">
@@ -134,7 +142,7 @@ const createNewPointTemplate = (newPoint) => {
 
           <div class="event__photos-container">
             <div class="event__photos-tape">
-              <img class="event__photo" src=${destination.photo} alt="Event photo">
+              ${getPhotoTemplate(destination.photo)}
             </div>
           </div>
         </section>

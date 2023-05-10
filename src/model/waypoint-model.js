@@ -9,4 +9,8 @@ export default class WaypointModel {
   getWaypoints() {
     return this.waypoints;
   }
+
+  getNewPoint() {
+    return getRandomWaypoint();
+  }
 }
